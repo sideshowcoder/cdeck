@@ -1,4 +1,3 @@
 Slide number 1
 =============
-
 Some content
