@@ -1,0 +1,6 @@
+Slide number 2
+==============
+
+* a list
+* with a link to http://www.google.com
+

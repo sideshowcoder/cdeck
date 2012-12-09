@@ -1,24 +1,22 @@
 # CommandDeck
 
-TODO: Write a gem description
+Command line slide deck
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'command_deck'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install command_deck
 
 ## Usage
 
-TODO: Write usage instructions here
+create a folder with .mdown files, numbered as your slides and run CommandDeck 
+on this folter
+
+    $ cdeck ./my_slides
+
+* n to go to next slide
+* p to go to the previous slide
+* o to open the first (and only) link on the slide in the default browser
+* q to quit
 
 ## Contributing
 

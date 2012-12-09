@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "command_deck"
+
+slide_folder = ARGF
+
+cdeck = CommandDeck::Deck.new(slide_folder)
+cdeck.start
+
