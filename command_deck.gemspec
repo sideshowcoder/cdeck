@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.version       = CommandDeck::VERSION
   
   gem.add_dependency "ruby-terminfo"
+  gem.add_dependency "thor"
     
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "pry"
