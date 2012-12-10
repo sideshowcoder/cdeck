@@ -21,11 +21,12 @@ module CommandDeck
     end
 
     def max_text_width
-      lines.sort_by(&:length).last.length 
+      text_width = lines.sort_by(&:length).last.length 
+      text_width < width ? text_width : width
     end
 
     def max_text_height
-      lines.length
+      lines.length < height ? lines.length : height
     end
 
     def justify_lines
