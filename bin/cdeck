@@ -1,9 +1,57 @@
 #!/usr/bin/env ruby
-
+require "terminfo"
 require "command_deck"
 
-slide_folder = ARGF
+class Runner
 
-cdeck = CommandDeck::Deck.new(slide_folder)
-cdeck.start
+  attr_accessor :deck
+
+  def initialize(args)
+    @current = args.fetch(:current, 1)
+    @deck = CommandDeck::Deck.new(slide_dir: args[:slide_dir],
+                                  screen_width: args.fetch(:screen_width, 80),
+                                  screen_height: args.fetch(:screen_height, 24))
+  end
+
+  def read_char 
+    begin 
+      old_state = `stty -g`
+      system "stty  raw -echo"
+      c = $stdin.getc.chr
+    rescue => ex
+      p ex
+    ensure 
+      system "stty #{old_state}"
+    end
+    c
+  end
+
+  def start
+    display_slide(@current)
+    loop do
+      case read_char
+      when "q"
+        break
+      when "n"
+        @current = @current + 1
+        display_slide(@current)
+      when "p"
+        @current = @current - 1
+        display_slide(@current)
+      else
+        next
+      end
+    end
+  end
+
+  def display_slide(number)
+    system "clear"
+    puts deck.slide_with_number(number).content
+  end
+end
+
+runner = Runner.new(slide_dir: ARGV[0],
+                    screen_height: TermInfo.screen_size[0],
+                    screen_width: TermInfo.screen_size[1])
+runner.start
 

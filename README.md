@@ -15,7 +15,6 @@ on this folter
 
 * n to go to next slide
 * p to go to the previous slide
-* o to open the first (and only) link on the slide in the default browser
 * q to quit
 
 ## Contributing

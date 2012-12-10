@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/command_deck/version', __FILE__)
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "command_deck/version"
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Philipp Fehre"]
@@ -15,6 +17,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = CommandDeck::VERSION
   
+  gem.add_dependency "ruby-terminfo"
+    
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "pry"
  

@@ -14,7 +14,8 @@ module CommandDeck
       @screen_height = args.fetch(:screen_height, 24)
       @slides = []
       Dir.glob(slide_dir + "/*.mdown") do |slide_file|
-        slides << slide.new(file: slide_file, 
+        text = File.read(slide_file)
+        slides << slide.new(text: text, 
                             height: screen_height, 
                             width: screen_width)
       end
@@ -23,6 +24,5 @@ module CommandDeck
     def slide_with_number(number)
       slides.fetch(number - 1)
     end
-
   end
 end

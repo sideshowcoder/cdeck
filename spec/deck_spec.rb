@@ -22,7 +22,6 @@ module CommandDeck
       slide.should_receive(:new).twice
       Deck.new(slide_dir: SEED_DIR, slide: slide)
     end
-
   end
 
 end
