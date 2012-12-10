@@ -31,10 +31,10 @@ module CommandDeck
         when "q"
           break
         when "n"
-          @current = @current + 1
+          @current = @current + 1 unless deck.count <= @current
           display_slide(@current)
         when "p"
-          @current = @current - 1
+          @current = @current - 1 unless @current <= 1
           display_slide(@current)
         else
           next
