@@ -4,14 +4,16 @@ Command line slide deck
 
 ## Installation
 
-    $ gem install command_deck
+    $ git clone git@github.com:sideshowcoder/cdeck.git
+    $ cd cdeck && rake build && rake install
+    $ thor install bin/cdeck.thor
 
 ## Usage
 
 create a folder with .mdown files, numbered as your slides and run CommandDeck 
-on this folter
+on this folder
 
-    $ cdeck ./my_slides
+    $ thor cdeck:present ./my_slides
 
 * n to go to next slide
 * p to go to the previous slide
