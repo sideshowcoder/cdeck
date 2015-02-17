@@ -10,7 +10,7 @@ module CommandDeck
     let(:deck) { Deck.new(slide_dir: SEED_DIR, slide: slide) }
 
     it "should set the number of slides available" do
-      deck.count.should == 2 
+      deck.count.should == 2
     end
 
     it "should return the slide with the requested number" do

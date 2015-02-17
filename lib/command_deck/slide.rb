@@ -21,7 +21,7 @@ module CommandDeck
     end
 
     def max_text_width
-      text_width = lines.sort_by(&:length).last.length 
+      text_width = lines.sort_by(&:length).last.length
       text_width < width ? text_width : width
     end
 
@@ -30,7 +30,7 @@ module CommandDeck
     end
 
     def justify_lines
-      lines.collect do |line| 
+      lines.collect do |line|
         spaces =  " " * ((width - max_text_width) / 2)
         spaces + line
       end.join("")
