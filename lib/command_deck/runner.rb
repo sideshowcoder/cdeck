@@ -11,14 +11,14 @@ module CommandDeck
                                     screen_height: args.fetch(:screen_height, 24))
     end
 
-    def read_char 
-      begin 
+    def read_char
+      begin
         old_state = `stty -g`
         system "stty  raw -echo"
         c = $stdin.getc.chr
       rescue => ex
         p ex
-      ensure 
+      ensure
         system "stty #{old_state}"
       end
       c
