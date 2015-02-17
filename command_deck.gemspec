@@ -16,11 +16,12 @@ Gem::Specification.new do |gem|
   gem.name          = "command_deck"
   gem.require_paths = ["lib"]
   gem.version       = CommandDeck::VERSION
-  
+
   gem.add_dependency "ruby-terminfo"
   gem.add_dependency "thor"
-    
+
   gem.add_development_dependency "rspec"
+  gem.add_development_dependency "rspec-mocks"
   gem.add_development_dependency "pry"
- 
+
 end

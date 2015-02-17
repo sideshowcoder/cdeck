@@ -6,7 +6,7 @@ module CommandDeck
   class Slide; end
 
   describe Deck do
-    let(:slide) { slide = mock("Slide").as_null_object }
+    let(:slide) { slide = double("Slide").as_null_object }
     let(:deck) { Deck.new(slide_dir: SEED_DIR, slide: slide) }
 
     it "should set the number of slides available" do
